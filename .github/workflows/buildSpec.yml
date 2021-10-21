@@ -5,7 +5,7 @@ on:
       - main
 
 jobs:
-  Build-And-Deploy-Website:
+  Build-And-Deploy-Personal-Blog:
     runs-on: ubuntu-latest
     steps:
       - name: Deploy to the personal blog
