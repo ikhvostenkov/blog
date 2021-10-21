@@ -1,0 +1,16 @@
+name: Personal Blog
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  Build-And-Deploy-Website:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy to the personal blog
+        run: |
+          curl -X POST https://api.github.com/repos/ikhvostenkov/blog-platform/dispatches \
+          -H 'Accept: application/vnd.github.v3+json' \
+          -u ${{ secrets.ACCESS_TOKEN }} \
+          --data '{"event_type": "production-deploy", "client_payload": { "repository": "'"$GITHUB_REPOSITORY"'" }}'
