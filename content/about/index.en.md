@@ -3,10 +3,10 @@ title: "About Me"
 date: 2021-10-24
 draft: false
 ---
-{{< style "img { float: right; height: 20.25rem; margin: 10px}" >}}
+{{< style "img { float: right; height: 20.25rem; margin: 10px; width: 30%; }" >}}
 ![Badge](/images/about/about-me.jpeg)
 {{< /style >}}
-{{< style "font-size: 1.3em; line-height: 1.5; word-spacing: 1.2px;" >}}
+{{< style "font-size: 1.3em; line-height: 1.5em; word-spacing: 0.1em;" >}}
 Hey! My name’s Igor Khvostenkov.
 
 I like to solve complicated technical challenges and learn new things. I would like to share
