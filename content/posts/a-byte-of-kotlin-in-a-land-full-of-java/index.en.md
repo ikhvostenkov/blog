@@ -30,7 +30,7 @@ Kotlin is elegant, pragmatic and tool friendly language, but elegance is great, 
 it's pragmatic. It is not a research project, but the language which was build for engineers
 by engineers.
 {{< style "td,th,thead,table { border: none;  background-color: transparent; text-align: center; } img {  width: 65%; }"  >}}
-| ![Kotlin Logo](./cut.png) | ![Kotlin Logo](./shield.png) | ![Kotlin Logo](./extension.png) | ![Kotlin Logo](./wrench.png) |
+| ![cut](./cut.png) | ![shield](./shield.png) | ![extension](./extension.png) | ![wrench](./wrench.png) |
 | --- | --- | -- | --- |
 | **CONCISE** | **SAFE** | **INTEROPERABLE** | **TOOL-FRIENDLY** |
 | *Drastically reduce the amount of boilerplate code* | *Avoid entire classes of errors such as null pointer exceptions* | *Leverage existing libraries for the JVM, Android and the Browser* | *Choose any Java IDE or build from the command line* |
