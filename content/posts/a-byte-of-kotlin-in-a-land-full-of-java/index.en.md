@@ -13,7 +13,7 @@ So let's have a journey from island of Java to island of Kotlin together.
 
 ### How was my first time?
 {{< style "img { float: right; margin: 0.5em; width: 22%; }" >}}
-![Kotlin Logo](./Kotlin.png)
+![Kotlin Logo](./kotlin.png)
 My first acquaintance with Kotlin was when it has such a weird logo.
 
 Back then I wrote nothing more than "Hello, World!" project in Kotlin and only followed Kotlin
