@@ -35,3 +35,12 @@ by engineers.
 | **CONCISE** | **SAFE** | **INTEROPERABLE** | **TOOL-FRIENDLY** |
 | *Drastically reduce the amount of boilerplate code* | *Avoid entire classes of errors such as null pointer exceptions* | *Leverage existing libraries for the JVM, Android and the Browser* | *Choose any Java IDE or build from the command line* |
 {{< /style >}}
+
+### Kotlin ecosystem
+One of the magic of Java - is it's backwards compatibility, but it's also a big bottleneck,
+which limits some of the features and makes some features implemented in the inefficient way.
+Kotlin was designed with keeping in mind all drawbacks of Java, but being 100% interoperable with it.
+{{< style "img { display:block; margin: auto; }" >}}
+![Kotlin Lib](./kotlin-lib.svg)
+![No Kotlin SDK](./no-kotlin-sdk.svg)
+{{< /style >}}
