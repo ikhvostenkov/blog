@@ -37,8 +37,8 @@ by engineers.
 {{< /style >}}
 
 ### Kotlin ecosystem
-One of the magic of Java - is it's backwards compatibility, but it's also a big bottleneck,
-which limits some of the features and makes some features implemented in the inefficient way.
+One of the magic of Java - is its backwards compatibility, but it's also a big bottleneck,
+which limits some features and makes some features implemented in the inefficient way.
 Kotlin was designed with keeping in mind all drawbacks of Java, but being 100% interoperable with it.
 {{< style "img { display:block; margin: auto; }" >}}
 ![Kotlin Lib](./kotlin-lib.svg)
