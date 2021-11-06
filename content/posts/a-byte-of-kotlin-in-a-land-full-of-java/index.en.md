@@ -44,3 +44,28 @@ Kotlin was designed with keeping in mind all drawbacks of Java, but being 100% i
 ![Kotlin Lib](./kotlin-lib.svg)
 ![No Kotlin SDK](./no-kotlin-sdk.svg)
 {{< /style >}}
+
+### What ∆ do we expect?
+Why we decided to introduce kotlin?
+
+In our project we had:
+- A lot of Java code which was written starting from Java 1.4
+- Lot of entities which are changing
+- Fit enough with boilerplate code and kludges
+
+We would like to get:
+- Better code reading
+- Faster feature creation
+- Less routing coding
+- More expressive
+
+What does Kotlin give us:
+- Code is shorter
+- Null-safety
+- Automatic type inference
+- Great interoperability with Java
+- Extension methods
+- Ideal delegation
+
+This is really all that pluses which Kotlin provides. This is what we were trying to achieve
+during the migration and this is what basically we got.
