@@ -69,3 +69,12 @@ What does Kotlin give us:
 
 This is really all that pluses which Kotlin provides. This is what we were trying to achieve
 during the migration and this is what basically we got.
+
+### Disadvantages?
+Everything looks so sweet by far. But is there a dark side?
+
+Actually yes and I should say about it. If you like ternary operator, you should forget about it.
+And there some things you should be ready for: you will be not able to assign int to long variable,
+nothing will be cast automatically. You would lose some Intellij features. And you would have
+some bugs. Together with less code and better readability you will also get some noise.
+But still we have more advantages.
