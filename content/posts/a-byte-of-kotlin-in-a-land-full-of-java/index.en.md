@@ -78,3 +78,12 @@ And there some things you should be ready for: you will be not able to assign in
 nothing will be cast automatically. You would lose some Intellij features. And you would have
 some bugs. Together with less code and better readability you will also get some noise.
 But still we have more advantages.
+
+### Code style
+Important preparation step to the migration is Code Style. A new code style adoption might be a very
+natural process, if it starts with a new project, when there's no code formatted in the old way.
+Changing formatting in an existing project is a far more demanding task, and should probably
+be started with discussing all the caveats with the team.
+{{< style "img { display:block; margin: auto; }" >}}
+![Code Style Inspections](./code-style-inspections.png)
+{{< /style >}}
