@@ -112,3 +112,12 @@ kotlin.code.style=official
 [DETEKT](https://github.com/detekt/detekt)
 
 Who fails the build if the check fails?
+
+## Mixing Kotlin and JAVA
+As Kotlin compiles to Java byte code you can have both Java and Kotlin code in one project, and you
+can gradually add Kotlin to your existing project. Although blending Java and Kotlin works great, you
+can't write idiomatic Java nor Kotlin code, when blending. So the goal should be to move completely to
+Kotlin.
+{{< style "img { display:block; margin: auto; }" >}}
+![Kotlin Build Process](./kotlin-build-process.svg)
+{{< /style >}}
