@@ -87,3 +87,21 @@ be started with discussing all the caveats with the team.
 {{< style "img { display:block; margin: auto; }" >}}
 ![Code Style Inspections](./code-style-inspections.png)
 {{< /style >}}
+
+### Coding conventions
+There is for quite a long time like from 2018 so-called coding Kotlin conventions, but if you
+started before it or before Kotlin version 1.3, then you do not have all it in your project.
+But fortunately you have a special flag you can enable in maven or gradle which helps to
+synchronise your team.
+{{< style "img { display:block; margin: auto; }" >}}
+![Code Style Inspections](./code-style-inspections.png)
+{{< /style >}}
+{{< labelled-highlight lang="xml" filename="pom.xml" >}}
+<properties>
+<kotlin.code.style>official</kotlin.code.style>
+</properties>
+{{</ labelled-highlight >}}
+
+{{< labelled-highlight lang="gradle" filename="gradle.properties" >}}
+kotlin.code.style=official
+{{</ labelled-highlight >}}
