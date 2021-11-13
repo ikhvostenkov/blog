@@ -3,7 +3,7 @@ title: "A Byte of Kotlin in a Land Full of Java"
 date: 2021-10-25
 draft: true
 ---
-### Intro
+## Intro
 I came to the world of programming through Java path. And during my entire career I was programming 
 mostly in Java. When Kotlin became more and more popular in programming world I wanted to answer 
 the question is it worth to use Kotlin in Java project or not?
@@ -11,7 +11,7 @@ And it turned out, as always in engineering, that answer is it depends.
 This post is the way of a company I was working for and our experience.
 So let's have a journey from island of Java to island of Kotlin together.
 
-### How was my first time?
+## How was my first time?
 {{< style "img { float: right; margin: 0.5em; width: 22%; }" >}}
 ![Kotlin Logo](./kotlin.png)
 My first acquaintance with Kotlin was when it has such a weird logo.
@@ -25,7 +25,7 @@ Kotlin full time in our Java components in production running project. This was 
 500K LOC, but was quite a while in production: for 12 years.
 {{< /style >}}
 
-### Main kotlin features
+## Main kotlin features
 Kotlin is elegant, pragmatic and tool friendly language, but elegance is great, as long as
 it's pragmatic. It is not a research project, but the language which was build for engineers
 by engineers.
@@ -36,7 +36,7 @@ by engineers.
 | *Drastically reduce the amount of boilerplate code* | *Avoid entire classes of errors such as null pointer exceptions* | *Leverage existing libraries for the JVM, Android and the Browser* | *Choose any Java IDE or build from the command line* |
 {{< /style >}}
 
-### Kotlin ecosystem
+## Kotlin ecosystem
 One of the magic of Java - is its backwards compatibility, but it's also a big bottleneck,
 which limits some features and makes some features implemented in the inefficient way.
 Kotlin was designed with keeping in mind all drawbacks of Java, but being 100% interoperable with it.
@@ -45,7 +45,7 @@ Kotlin was designed with keeping in mind all drawbacks of Java, but being 100% i
 ![No Kotlin SDK](./no-kotlin-sdk.svg)
 {{< /style >}}
 
-### What ∆ do we expect?
+## What ∆ do we expect?
 Why we decided to introduce kotlin?
 
 In our project we had:
@@ -70,7 +70,7 @@ What does Kotlin give us:
 This is really all that pluses which Kotlin provides. This is what we were trying to achieve
 during the migration and this is what basically we got.
 
-### Disadvantages?
+## Disadvantages?
 Everything looks so sweet by far. But is there a dark side?
 
 Actually yes and I should say about it. If you like ternary operator, you should forget about it.
@@ -79,7 +79,7 @@ nothing will be cast automatically. You would lose some Intellij features. And y
 some bugs. Together with less code and better readability you will also get some noise.
 But still we have more advantages.
 
-### Code style
+## Code style
 Important preparation step to the migration is Code Style. A new code style adoption might be a very
 natural process, if it starts with a new project, when there's no code formatted in the old way.
 Changing formatting in an existing project is a far more demanding task, and should probably
