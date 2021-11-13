@@ -105,3 +105,10 @@ synchronise your team.
 {{< labelled-highlight lang="gradle" filename="gradle.properties" >}}
 kotlin.code.style=official
 {{</ labelled-highlight >}}
+
+### Check style
+[KTLINT](https://github.com/pinterest/ktlint)
+
+[DETEKT](https://github.com/detekt/detekt)
+
+Who fails the build if the check fails?
