@@ -121,3 +121,16 @@ Kotlin.
 {{< style "img { display:block; margin: auto; }" >}}
 ![Kotlin Build Process](./kotlin-build-process.svg)
 {{< /style >}}
+
+## Strategies for adoption
+We can live with both languages in production more or less good, but this leads us to other question how to adopt Kotlin
+on practice? On the right picture you can see module with 2 source folders Java and Kotlin respectively usually
+```kotlinc``` invoked first to compile Kotlin files, then javac to compile Java on demand if there are dependency from
+Kotlin to JAVA.
+{{< style "td,th,thead,table { border: none;  background-color: transparent; text-align: left; } img { margin: 0.5em; } "  >}}
+| ![Dependency Map](./dependency-map.png) | ![JAVA Kotlin Tree](./java-kotlin-tree.png) |
+| --- | --- |
+{{< /style >}}
+- Use Module Dependency Graph as a map
+- Build tools: first invoke ```kotlinc```, then ```javac```
+- Kotlin compiler knows when to invoke ```javac```
