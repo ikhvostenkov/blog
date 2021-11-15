@@ -134,3 +134,19 @@ Kotlin to JAVA.
 - Use Module Dependency Graph as a map
 - Build tools: first invoke ```kotlinc```, then ```javac```
 - Kotlin compiler knows when to invoke ```javac```
+
+## Conversion strategies
+The next question is how to convert your code systematically:
+- One more systematic way is to go random and wild, and do it along the task it hands. From the technical point of view
+  this is the worst approach, but it is the best following the business value.
+
+Here you can see to incremental systematic approaches:
+- Inside-out, you take your dependency graph and first convert your innermost modules going outside.
+  {{< style "img { display:block; margin: auto; }" >}}
+  ![Dependency Map Inside-out](./dependency-map-inside-out.png)
+  {{< /style >}}
+- And outside-in you start from outside your graph and then go to the
+  innermost:
+  {{< style "img { display:block; margin: auto; }" >}}
+  ![Dependency Map Outside-in](./dependency-map-outside-in.png)
+  {{< /style >}}
