@@ -150,3 +150,13 @@ Here you can see to incremental systematic approaches:
   {{< style "img { display:block; margin: auto; }" >}}
   ![Dependency Map Outside-in](./dependency-map-outside-in.png)
   {{< /style >}}
+
+## JAVA to Kotlin converter
+Magic keys combination CMD + Option + Shift + K. Works only in one direction. Your Java class will become Kotlin class,
+but most of the case you require some revision and rework. What is the difference of new Kotlin converting. JetBrains
+advertise improved nullability conversion.
+{{< style "img { display:block; margin: auto; }" >}}
+![JAVA to Kotlin Converter](./java-to-kotlin-converter.png)
+{{< /style >}}
+Converter is software. It can have bugs. Be aware.
+> ⚠️ **No tests, no conversion!**
