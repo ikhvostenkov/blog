@@ -160,3 +160,65 @@ advertise improved nullability conversion.
 {{< /style >}}
 Converter is software. It can have bugs. Be aware.
 > ⚠️ **No tests, no conversion!**
+
+### Converting: from JAVA
+You can automatically convert JAVA code to Kotlin code. But does the automatic JAVA to Kotlin converter always produces
+the idiomatic Kotlin code? Actually not. Kotlin converter does not produce the best results:
+{{< labelled-highlight lang="java" filename="Participant.java" >}}
+public class Participant {
+
+    private AudioState audioState;
+ 
+    public AudioState getAudioState() {
+        return audioState;
+    }
+
+}
+{{</ labelled-highlight >}}
+{{< labelled-highlight lang="java" filename="Conference.java" >}}
+public class Conference {
+private List<Participant> participants;
+private ConferenceState state;
+
+    public List<Participant> getParticipants() {
+    return participants;
+    }
+    
+    public ConferenceState getState() {
+    return state;
+    }
+}
+{{</ labelled-highlight >}}
+{{< labelled-highlight lang="java" filename="Example.java" >}}
+public class Example {
+
+    public void test() {
+        Conference conference = new Conference();
+ 
+        String conferenceState = conference.getState().name();
+ 
+        if (conferenceState.equals(ConferenceState.ENDED.name())) {
+            conference.getParticipants().forEach(p -> {
+                if (!p.getAudioState().name().equals(AudioState.CONNECTED.name())) {
+                    p.disconnect();
+                }
+            });
+        }
+    }
+}
+{{</ labelled-highlight >}}
+{{< labelled-highlight lang="kotlin" filename="Conference.kt" >}}
+class Example {
+  fun test() {
+    val conference = Conference()
+    val conferenceState = conference.state.name
+    if (conferenceState == ConferenceState.ENDED.name) {
+      conference.participants.forEach(Consumer { p: Participant ->
+        if (p.audioState.name != AudioState.CONNECTED.name) {
+          p.disconnect()
+        }
+      })
+    }
+  }
+}
+{{</ labelled-highlight >}}
