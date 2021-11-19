@@ -222,3 +222,68 @@ class Example {
   }
 }
 {{</ labelled-highlight >}}
+
+### Converting: to Kotlin
+But if you've written your Java code so that it can be easily interpreted, the converted Kotlin code becomes better.
+Refactor your Java code -> convert to Kotlin using automatic converter, then simplify. We know the strategy, we have
+the tool, but where to start? First we proofed that our project works with Kotlin and our team understands how to mix
+it. We started to refactor some old Java code to Kotlin, mainly tests, which typically means calling from Java code into
+Kotlin. Then we started converting small classes such interfaces, enums and small data classes written in Java into
+Kotlin. After that all the new features we wrote with Kotlin. You do not have to alter all surrounding Java code due to
+Java and Kotlin interop smoothly. Java does not know about any Kotlin running at all.
+{{< labelled-highlight options="linenos=true" lang="java" filename="Participant.java" >}}
+public class Participant {
+
+    private AudioState audioState;
+    @Nullable
+    public AudioState getAudioState() {
+        return audioState;
+    }
+}
+{{</ labelled-highlight >}}
+{{< labelled-highlight options="linenos=true" lang="java" filename="Conference.java" >}}
+public class Conference {
+  private List<Participant> participants;
+  private ConferenceState state;
+  @Nullable
+  public List<Participant> getParticipants() {
+    return participants;
+  }
+  @Nullable
+  public ConferenceState getState() {
+    return state;
+  }
+}
+{{</ labelled-highlight >}}
+{{< labelled-highlight options="linenos=true" lang="java" filename="Example.java" >}}
+public class Example {
+    public void test() {
+        Conference conference = new Conference();
+ 
+        String conferenceState = conference.getState().name();
+ 
+        if (conferenceState.equals(ConferenceState.ENDED.name())) {
+            conference.getParticipants().forEach(p -> {
+                if (!p.getAudioState().name().equals(AudioState.CONNECTED.name())) {
+                    p.disconnect();
+                }
+            });
+        }
+    }
+}
+{{</ labelled-highlight >}}
+{{< labelled-highlight options="linenos=true" lang="kotlin" filename="Example.kt" >}}
+class Example {
+  fun test() {
+    val conference = Conference()
+    val conferenceState = conference.state!!.name
+    if (conferenceState == ConferenceState.ENDED.name) {
+      conference.participants!!.forEach(Consumer { p: Participant ->
+        if (p.audioState!!.name != AudioState.CONNECTED.name) {
+          p.disconnect()
+        }
+      })
+    }
+  }
+}
+{{</ labelled-highlight >}}
