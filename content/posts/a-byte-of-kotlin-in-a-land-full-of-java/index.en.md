@@ -287,3 +287,15 @@ class Example {
   }
 }
 {{</ labelled-highlight >}}
+
+## Testing in Kotlin
+### Naming
+Some Java frameworks like Spring are known with its class and methods names. Something like
+AbstractPostProcessorFactoryBean and this is not the longest name, but Kotlin could do better.
+You can write more readable names with spaces. However, dotes and carriage returns are not allowed.
+{{< labelled-highlight lang="kotlin" filename="Test.kt" >}}
+@Test
+fun `The very detailed and readable test name`() {
+assertThat("String", instanceOf(String::class.java))
+}
+{{</ labelled-highlight >}}
