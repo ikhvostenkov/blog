@@ -299,3 +299,34 @@ fun `The very detailed and readable test name`() {
 assertThat("String", instanceOf(String::class.java))
 }
 {{</ labelled-highlight >}}
+
+### Kotlin + JUnit
+Probably the most popular Java framework for unit testing is JUnit. And it works out of the box with some assumptions.
+You should know that ```@BeforeAll``` and ```@AfterAll``` should be defined in the companion object.
+Companion is such small singleton inside our class.
+And everything what is inside this singleton is static. There are no static fields in Kotlin.
+In Parameterized tests ```ClassRule```, ```MethodRule``` and Parameter should be defined as ```@JvmFields```.
+There should be no getters and setters generated for them, only Java field. We can use ```@JvmStatic``` so that our
+```@BeforeAll``` and ```@AfterAll``` will be generated not inside companion, but inside test class.
+```@BeforeAll``` and ```@AfterAll``` go to Companion Object
+```@Rule``` and ```@Parameter``` should be appended with ```@JvmField```
+{{< labelled-highlight lang="kotlin" filename="Test.kt" >}}
+companion object {
+@JvmStatic @BeforeClass
+fun setUp() {}
+
+    @ClassRule @JvmField
+    var resource: ExternalResource = object : ExternalResource() {
+      override fun before() {
+        conference.connect()
+      }
+
+      override fun after() {
+        conference.disconnect()
+      }
+    }
+}
+
+@Rule @JvmField
+var rule = TemporaryConference()
+{{</ labelled-highlight >}}
