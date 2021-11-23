@@ -330,3 +330,30 @@ fun setUp() {}
 @Rule @JvmField
 var rule = TemporaryConference()
 {{</ labelled-highlight >}}
+
+### Kotlin + Mockito
+Second part of the testing is Mocks. This is very hard to test huge and complicated code with a lot of dependencies,
+so we use mocks to avoid it.
+And here using classic mockito we got some problems.
+
+```anyObject()``` matcher returns ```null```.
+This is a problem as Kotlin checks for null-safety. When Kotlin accesses the object it checks that object is not null.
+And if it is null, then Kotlin returns Kotlin NPE.
+
+```anyString()``` also returns ```null```, this is strange as they could return just empty string.
+Probably, it is done to save memory.
+
+```When``` is keyword in Kotlin and used in Mockito do define module behaviour. With ```when``` this is very easy
+to solve the problem by importing it with the other name.
+
+For ```anyObject```: if we do not want to use third party libraries we have to write a kludge.
+
+We can create extension function which will pass the concrete class to the mockito ```any()```.
+We use function of the reified generics, it compiles in your kotlin code and type will be known there.
+{{< labelled-highlight lang="kotlin" filename="Test.kt" >}}
+import org.mockito.Mockito.`when` as on
+
+
+inline fun &ltreified T> kotlinAny(): T = kotlinAny(T::class.java)
+inline fun &ltreified T> kotlinAny(t: Class&ltT>): T = Mockito.any&ltT>(t)
+{{</ labelled-highlight >}}
