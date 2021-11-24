@@ -357,3 +357,17 @@ import org.mockito.Mockito.`when` as on
 inline fun &ltreified T> kotlinAny(): T = kotlinAny(T::class.java)
 inline fun &ltreified T> kotlinAny(t: Class&ltT>): T = Mockito.any&ltT>(t)
 {{</ labelled-highlight >}}
+
+### The Chad Mockito
+But Mockito could be beautiful and idiomatic. MockK library allows us to solve all the problems in a one shot.
+{{< labelled-highlight lang="kotlin" filename="MockK.kt" >}}
+val car = mockk&ltCar>()
+
+every { car.drive(Direction.NORTH) } returns Outcome.OK
+
+car.drive(Direction.NORTH) // returns OK
+
+verify { car.drive(Direction.NORTH) }
+
+confirmVerified(car)
+{{</ labelled-highlight >}}
