@@ -371,3 +371,49 @@ verify { car.drive(Direction.NORTH) }
 
 confirmVerified(car)
 {{</ labelled-highlight >}}
+
+## Problem of the no-args constructors in Java
+If you are using the Java Persistence API (JPA) you will have problems there.
+You would probably want to use Data classes for your entities in Kotlin.
+And this is logical desire, the have lot of perks, like equals and hashcode out of the box, Kotlin ```copy()``` functionality.
+
+Data classes have no no-arg constructor, but you need it in JPA. This is must have requirement in JPA.
+As solution - do not use data classes, but then you loose all perks.
+
+Second: use the no-arg compiler plugin. It generates an additional zero-argument constructor for classes with a specific annotation.
+The generated constructor is synthetic, so it can’t be directly called from Java or Kotlin, but it can be called using reflection.
+This allows JPA to instantiate a class, although it doesn't have the zero-parameter constructor from Kotlin or Java point of view.
+{{< labelled-highlight lang="XML" filename="pom.xml" >}}
+<configuration>
+<compilerPlugins>
+<!-- Or "jpa" for JPA support -->
+<plugin>no-arg</plugin>
+</compilerPlugins>
+
+          <pluginOptions>
+              <option>no-arg:annotation=com.my.Annotation</option>
+            <!-- Call instance initializers in the synthetic constructor -->
+            <!-- <option>no-arg:invokeInitializers=true</option> -->
+          </pluginOptions>
+</configuration>
+<dependencies>
+      <dependency>
+          <groupId>org.jetbrains.kotlin</groupId>
+          <artifactId>kotlin-maven-noarg</artifactId>
+          <version>${kotlin.version}</version>
+      </dependency>
+</dependencies>
+{{</ labelled-highlight >}}
+{{< labelled-highlight lang="gradle" filename="gradle.properties" >}}
+buildscript {
+    dependencies {
+        classpath "org.jetbrains.kotlin:kotlin-noarg:$kotlin_version"
+    }
+}
+
+apply plugin: "kotlin-noarg"
+
+noArg {
+annotation("com.my.Annotation")
+}
+{{</ labelled-highlight >}}
