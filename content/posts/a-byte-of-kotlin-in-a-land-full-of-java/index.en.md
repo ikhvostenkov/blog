@@ -417,3 +417,44 @@ noArg {
 annotation("com.my.Annotation")
 }
 {{</ labelled-highlight >}}
+
+## Problem of the final classes in Kotlin
+Kotlin has classes and their members final by default, which makes it inconvenient to use frameworks and libraries
+such as Spring AOP that require classes to be open. The all-open compiler plugin adapts Kotlin to the requirements of
+those frameworks and makes classes annotated with a specific annotation and their members open without the explicit open keyword.
+{{< labelled-highlight lang="XML" filename="pom.xml" >}}
+<configuration>
+<compilerPlugins>
+<!-- Or "spring" for the Spring support -->
+<plugin>all-open</plugin>
+</compilerPlugins>
+
+          <pluginOptions>
+              <!-- Each annotation is placed on its own line -->
+              <option>all-open:annotation=com.my.Annotation</option>
+              <option>all-open:annotation=com.their.AnotherAnnotation</option>
+          </pluginOptions>
+</configuration>
+
+<dependencies>
+      <dependency>
+          <groupId>org.jetbrains.kotlin</groupId>
+          <artifactId>kotlin-maven-allopen</artifactId>
+          <version>${kotlin.version}</version>
+      </dependency>
+</dependencies>
+{{</ labelled-highlight >}}
+{{< labelled-highlight lang="gradle" filename="gradle.properties" >}}
+buildscript {
+    dependencies {
+        classpath "org.jetbrains.kotlin:kotlin-allopen:$kotlin_version"
+    }
+}
+
+apply plugin: "kotlin-allopen"
+
+allOpen {
+annotation("com.my.Annotation")
+// annotations("com.another.Annotation", "com.third.Annotation")
+}
+{{</ labelled-highlight >}}
