@@ -458,3 +458,27 @@ annotation("com.my.Annotation")
 // annotations("com.another.Annotation", "com.third.Annotation")
 }
 {{</ labelled-highlight >}}
+
+## Some Language Features
+{{< labelled-highlight lang="java" filename="ParticipantDetails.java" >}}
+public interface ParticipantDetails {
+String getName();
+String getLastName();
+}
+{{</ labelled-highlight >}}
+{{< labelled-highlight lang="kotlin" filename="Participant.kt" >}}
+data class Participant(private val name: String,
+private val lastName: String) : Conference.ParticipantDetails {
+override fun getName(): String {
+return name;
+}
+
+        override fun getLastName(): String {
+            return lastName;
+        }
+    }
+{{</ labelled-highlight >}}
+What is the problem here?
+
+There are no getters and setters in Kotlin. You can not write something like ```override get() =...```.
+You should create private properties which obviously do not have generated getters and setters.
