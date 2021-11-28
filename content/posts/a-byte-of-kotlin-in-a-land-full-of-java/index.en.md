@@ -466,6 +466,10 @@ String getName();
 String getLastName();
 }
 {{</ labelled-highlight >}}
+What is the problem here?
+
+There are no getters and setters in Kotlin. You can not write something like ```override get() =...```.
+You should create private properties which obviously do not have generated getters and setters.
 {{< labelled-highlight lang="kotlin" filename="Participant.kt" >}}
 data class Participant(private val name: String,
 private val lastName: String) : Conference.ParticipantDetails {
@@ -478,7 +482,30 @@ return name;
         }
     }
 {{</ labelled-highlight >}}
-What is the problem here?
 
-There are no getters and setters in Kotlin. You can not write something like ```override get() =...```.
-You should create private properties which obviously do not have generated getters and setters.
+## Working with Annotations
+{{< labelled-highlight lang="kotlin" filename="Moderator.kt" >}}
+data class Moderator(
+@NotNull
+val name: String,
+@Active
+val conference: Conference
+) {}
+{{</ labelled-highlight >}}
+What could go wrong here?
+
+This is not clear that annotations applied to arguments of the constructor.
+Hibernate-validator does not know anything about arguments of the constructor. - keyword "field" helps us.
+
+```Notnull``` annotation will never be reached, as if you pass null first kotlin fill throw kotlin NPE,
+you probably should define field as nullable. Hibernate does not know about annotated arguments of the constructor,
+but jackson knows, you can use ```jackson-module-kotlin```, and you will have all kotlin features out of the box.
+
+{{< labelled-highlight lang="kotlin" filename="Moderator.kt" >}}
+data class Moderator(
+@field:NotNull
+val name: String,
+@field:Active
+val conference: Conference
+) {}
+{{</ labelled-highlight >}}
