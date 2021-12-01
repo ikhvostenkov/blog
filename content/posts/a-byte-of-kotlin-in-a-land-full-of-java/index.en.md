@@ -509,3 +509,21 @@ val name: String,
 val conference: Conference
 ) {}
 {{</ labelled-highlight >}}
+
+### Java + Lombok = Kotlin
+We use lombok in our project. What are the equivalents in Kotlin? What we are not loosing?
+Is there something that Kotlin does not provide us without of the box?
+{{< style "td,th,thead,table { border: none;  background-color: transparent; text-align: center; } "  >}}
+|     |     |
+| --- | --- |
+| **@Getters**|**Properties** |
+**@Setters**|
+| | |
+| | |
+| | |
+| **@NonNull**| **Nullable Types** |
+| | |
+| | |
+| | |
+| **val/var**| **val/var** |
+{{< /style >}}
