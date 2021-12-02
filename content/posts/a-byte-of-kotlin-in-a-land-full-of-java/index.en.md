@@ -527,3 +527,17 @@ Is there something that Kotlin does not provide us without of the box?
 | | |
 | **val/var**| **val/var** |
 {{< /style >}}
+
+### Java + Lombok. Delomboking
+We still can generate some of them like equals and hash code using Intellij.
+And we should do additionally some steps before converting from Java to Kotlin.
+There is tool provided by Intellij, called delombock.
+{{< style "td,th,thead,table { border: none;  background-color: transparent; text-align: center; } "  >}}
+|     |     |
+| --- | --- |
+| **@Equals**|**@HashCode** |
+| | |
+| | |
+| | |
+| **@ToString**| **Synchronized** |
+{{< /style >}}
