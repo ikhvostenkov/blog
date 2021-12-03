@@ -541,3 +541,37 @@ There is tool provided by Intellij, called delombock.
 | | |
 | **@ToString**| **Synchronized** |
 {{< /style >}}
+
+## Caveats for Java Developers
+{{< labelled-highlight lang="kotlin" filename="ConferenceCall.kt" >}}
+class ConferenceCall {
+val id: Int = Random.nextInt(0, 100)
+}
+{{</ labelled-highlight >}}
+{{< labelled-highlight lang="kotlin" filename="ConferenceFactoryTest.kt" >}}
+fun getConference() {
+val conferenceCall = ConferenceCall()
+for (i in 1..10) {
+println("Conference Call ID: ${conferenceCall.id}")
+}
+}
+{{</ labelled-highlight >}}
+{{< labelled-highlight lang="kotlin" filename="ConferenceCall.kt" >}}
+class ConferenceCall {
+val id: Int
+get() {
+return Random.nextInt(0, 100)
+}
+}
+{{</ labelled-highlight >}}
+{{< labelled-highlight lang="kotlin" filename="ConferenceFactoryTest.kt" >}}
+fun getConference() {
+val conferenceCall = ConferenceCall()
+for (i in 1..10) {
+println("Conference Call ID: ${conferenceCall.id}")
+}
+}
+{{</ labelled-highlight >}}
+Learn tools you use very good. As experience Java developer could think Kotlin is just Java with syntax sugar,
+sometimes they could be wrong. Kotlin is very flexible language and in some cases you can shoot yourself in the foot.
+As the same simple getter written in 2 different ways will also behave differently.
