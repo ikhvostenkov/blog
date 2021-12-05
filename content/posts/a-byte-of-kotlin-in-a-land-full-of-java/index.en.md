@@ -581,3 +581,9 @@ Among the technical difficulties also there could be human factors. When debatin
 development you should be aware that there's a third option: use both. And you can explain it to the colleagues and 
 do not force them to use Kotlin, but simply let them stay with Java. It is possible to have Kotlin and Java classes 
 side by side within the same project and everything will still compile.
+
+## Human Factors: Approaching
+How would you convince people? 
+
+First avoid Kotlin is cool argument, instead focus on the language features that promote maintainability and safety, 
+also remind people that it can be adopted incrementally. And it is a gradual evolution instead of revolution.
