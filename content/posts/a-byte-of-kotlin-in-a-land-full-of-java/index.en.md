@@ -587,3 +587,96 @@ How would you convince people?
 
 First avoid Kotlin is cool argument, instead focus on the language features that promote maintainability and safety, 
 also remind people that it can be adopted incrementally. And it is a gradual evolution instead of revolution.
+
+## Overall Code Base
+{{< echarts height="45rem">}}
+{
+"title": {
+"text": "Line of Codes",
+"top": "2%",
+"left": "center"
+},
+"tooltip": {
+"trigger": "axis"
+},
+"grid": {
+"left": "3%",
+"right": "5%",
+"bottom": "0%",
+"top": "12%",
+"containLabel": true
+},
+"toolbox": {
+"feature": {
+"saveAsImage": {
+"title": "Save as Image"
+}
+}
+},
+"dataset": {
+"source": [
+["linesOfCode", "programmingLanguage"],
+[812795, "Java"],
+[93206, "JavaScript"],
+[54233, "XML"],
+[35160, "Haskell"],
+[32720, "Maven"],
+[27179, "ActionScript"],
+[25494, "Kotlin"],
+[23563, "Mustache"],
+[21718, "HTML"],
+[19377, "XSD"],
+[17114, "CSS"],
+[13353, "MXML"],
+[10959, "Groovy"],
+[8970, "Bourne Shell"],
+[7721, "SVG"],
+[7138, "LESS"],
+[5984, "Markdown"],
+[4177, "YAML"],
+[1683, "Elm"],
+[1247, "AsciiDoc"],
+[910, "Bourne Again Shell"],
+[904, "Perl"],
+[868, "XSLT"],
+[457, "JSON"],
+[457, "Python"],
+[ 278, "SQL"],
+[196, "Erlang"],
+[ 173, "Cucumber"],
+[ 153, "INI"],
+[110, "Gradle"],
+[95, "Nix"],
+[85, "DOS Batch"],
+[66, "diff"],
+[55, "Velocity Template Language"],
+[10, "Scala"],
+[5, "sed"]
+]
+},
+"xAxis": {
+"type": "log",
+"show": false
+},
+"yAxis": {
+"type": "category",
+"inverse": true
+},
+"series": [
+{
+"type": "bar",
+"encode": {
+"x": "linesOfCode",
+"y": "programmingLanguage"
+},
+"label": {
+"show": true,
+"position": "inside"
+},
+"itemStyle": {
+"color": "#286DAF"
+}
+}
+]
+}
+{{< /echarts >}}
