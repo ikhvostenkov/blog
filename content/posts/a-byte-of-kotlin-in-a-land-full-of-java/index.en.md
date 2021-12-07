@@ -674,7 +674,7 @@ also remind people that it can be adopted incrementally. And it is a gradual evo
 "position": "inside"
 },
 "itemStyle": {
-"color": "#286DAF"
+"color": "#4679AA"
 }
 }
 ]
