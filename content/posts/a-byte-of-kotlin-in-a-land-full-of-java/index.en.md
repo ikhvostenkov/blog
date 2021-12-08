@@ -680,3 +680,92 @@ also remind people that it can be adopted incrementally. And it is a gradual evo
 ]
 }
 {{< /echarts >}}
+
+## Java + Kotlin
+{{< echarts >}}
+{
+"title": {
+"text": "Line of Codes",
+"top": "1%",
+"left": "center"
+},
+"tooltip": {
+"trigger": "axis"
+},
+"legend": {
+"data": ["Java LOC %", "Kotlin LOC %"],
+"top": "6%"
+},
+"grid": {
+"left": "3%",
+"right": "5%",
+"bottom": "3%",
+"top": "12%",
+"containLabel": true
+},
+"toolbox": {
+"feature": {
+"saveAsImage": {
+"title": "Save as Image"
+}
+}
+},
+"dataset": {
+"source": [
+["javaLoc", "kotlinLoc", "component"],
+[48, 52, "a1"],
+[75, 25, "a8"],
+[100, 0, "b1"],
+[100, 0, "b2"],
+[100, 0, "b5"],
+[0, 100, "b6"],
+[100, 0, "c0"],
+[100, 0, "c1"],
+[90, 10, "c2"],
+[100, 0, "c3"],
+[82, 18, "c4"],
+[98, 2, "d1"],
+[78, 22, "z2"],
+[0, 100, "z9"]
+]
+},
+"xAxis": {
+},
+"yAxis": {
+"type": "category",
+"inverse": true
+},
+"series": [
+{
+"name": "Java LOC %",
+"type": "bar",
+"stack": "one",
+"encode": {
+"x": "javaLoc",
+"y": "component"
+},
+"emphasis": {
+"focus": "series"
+},
+"itemStyle": {
+"color": "#4679AA"
+}
+},
+{
+"name": "Kotlin LOC %",
+"type": "bar",
+"stack": "one",
+"encode": {
+"x": "kotlinLoc",
+"y": "component"
+},
+"emphasis": {
+"focus": "series"
+},
+"itemStyle": {
+"color": "#EC522C"
+}
+}
+]
+}
+{{< /echarts >}}
