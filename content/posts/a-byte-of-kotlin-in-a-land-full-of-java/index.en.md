@@ -769,3 +769,12 @@ also remind people that it can be adopted incrementally. And it is a gradual evo
 ]
 }
 {{< /echarts >}}
+
+# Kotlin Tooling in 2020
+Kotlin is built with Tooling in mind from the ground up. It is well integrated with IntelliJ Idea and Android Studio. 
+Yet, refactorings are not as rich as for Java, but steadily improving in JetBrains IDEs. However, not much for other 
+IDEs available. Certain vendor Lock-In inevitable as of today. Kotlin has a very good support in Maven and Gradle.
+
+Kotlin built by company which produces Intellij Idea IDE, which has first class support of the language. 
+More and more new open source libraries appear on gitHub, which written in Kotlin and to be used in Kotlin environment.
+Also, you can use existing Java libraries from Kotlin.
