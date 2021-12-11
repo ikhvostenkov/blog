@@ -778,3 +778,14 @@ IDEs available. Certain vendor Lock-In inevitable as of today. Kotlin has a very
 Kotlin built by company which produces Intellij Idea IDE, which has first class support of the language. 
 More and more new open source libraries appear on gitHub, which written in Kotlin and to be used in Kotlin environment.
 Also, you can use existing Java libraries from Kotlin.
+
+## Conclusion
+ - There is no free lunch, but Kotlin tastes good
+ - Especially suitable for users of JetBrains IDEs
+ - Very good interop with Java and small footprint
+ - It is a good trade-off with significant advantages
+ - More safety, more solid design, less boilerplate
+ - Applicable for new and legacy codebase
+
+Finally, Kotlin is an excellent piece of engineering. It's a good trade of for less boilerplate,
+better design and most importantly it could be used in legacy code bases just a long side with Java.
