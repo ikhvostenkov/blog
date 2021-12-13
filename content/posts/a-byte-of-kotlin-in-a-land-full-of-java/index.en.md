@@ -789,3 +789,11 @@ Also, you can use existing Java libraries from Kotlin.
 
 Finally, Kotlin is an excellent piece of engineering. It's a good trade of for less boilerplate,
 better design and most importantly it could be used in legacy code bases just a long side with Java.
+
+{{< style "img { display:block; margin: auto; width: 55%; margin-top: 2em;}" >}}
+![Kotlin Logo](./jteqd.png)
+{{< /style >}}
+{{< style "text-align:center; margin-top: 2em; font-size: 1.5em;" >}}
+But this number did not change ⍨ 10 years.
+Let's make it happen.
+{{< /style >}}
