@@ -4,12 +4,12 @@ date: 2020-10-25
 draft: false
 ---
 ## Intro
-I came to the world of programming through Java path. And during my entire career I was programming 
-mostly in Java. When Kotlin became more and more popular in programming world I wanted to answer 
+I came to the world of programming through a Java path. And during my entire career I was programming 
+mostly in Java. When Kotlin became more and more popular in the programming world I wanted to answer 
 the question is it worth to use Kotlin in Java project or not?
-And it turned out, as always in engineering, that answer is it depends.
+And it turned out, as always in an engineering, that an answer is it depends.
 This post is the way of a company I was working for and our experience.
-So let's have a journey from island of Java to island of Kotlin together.
+So let's have a journey from an island of Java to an island of Kotlin together.
 
 ## How was my first time?
 {{< style "img { float: right; margin: 0.5em; width: 22%; }" >}}
