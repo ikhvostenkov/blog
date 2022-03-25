@@ -421,7 +421,7 @@ buildscript {
 apply plugin: "kotlin-noarg"
 
 noArg {
-annotation("com.my.Annotation")
+    annotation("com.my.Annotation")
 }
 {{</ labelled-highlight >}}
 
@@ -461,64 +461,67 @@ buildscript {
 apply plugin: "kotlin-allopen"
 
 allOpen {
-annotation("com.my.Annotation")
-// annotations("com.another.Annotation", "com.third.Annotation")
+    annotation("com.my.Annotation")
+    // annotations("com.another.Annotation", "com.third.Annotation")
 }
 {{</ labelled-highlight >}}
 
 ## Some Language Features
 {{< labelled-highlight lang="java" filename="ParticipantDetails.java" >}}
 public interface ParticipantDetails {
-String getName();
-String getLastName();
+    String getName();
+    String getLastName();
 }
 {{</ labelled-highlight >}}
-What is a problem here?
+**What is a problem here?**
 
 There are no getters and setters in Kotlin. You can not write something like ```override get() =...```.
 You should create private properties which obviously do not have generated getters and setters.
 {{< labelled-highlight lang="kotlin" filename="Participant.kt" >}}
 data class Participant(private val name: String,
-private val lastName: String) : Conference.ParticipantDetails {
-override fun getName(): String {
-return name;
-}
+  private val lastName: String) : Conference.ParticipantDetails {
+  
+        override fun getName(): String {
+            return name;
+        }
 
         override fun getLastName(): String {
             return lastName;
         }
-    }
+}
 {{</ labelled-highlight >}}
 
 ## Working with Annotations
 {{< labelled-highlight lang="kotlin" filename="Moderator.kt" >}}
-data class Moderator(
-@NotNull
-val name: String,
-@Active
-val conference: Conference
+    data class Moderator(
+    @NotNull
+    val name: String,
+    @Active
+    val conference: Conference
 ) {}
 {{</ labelled-highlight >}}
-What could go wrong here?
+**What could go wrong here?**
 
 This is not clear that annotations applied to arguments of the constructor.
 Hibernate-validator does not know anything about arguments of the constructor. - keyword "field" helps us.
 
-```Notnull``` annotation will never be reached, as if you pass null first kotlin fill throw kotlin NPE,
-you probably should define field as nullable. Hibernate does not know about annotated arguments of the constructor,
-but jackson knows, you can use ```jackson-module-kotlin```, and you will have all kotlin features out of the box.
+```Notnull``` annotation will never be reached, as if you pass ```null``` first, Kotlin fill throw Kotlin NPE.
+You probably should define field as nullable. Hibernate does not know about annotated arguments of a constructor,
+but jackson knows, you can use ```jackson-module-kotlin```, and you will have all Kotlin features out of the box.
 
 {{< labelled-highlight lang="kotlin" filename="Moderator.kt" >}}
 data class Moderator(
-@field:NotNull
-val name: String,
-@field:Active
-val conference: Conference
+    @field:NotNull
+    val name: String,
+    @field:Active
+    val conference: Conference
 ) {}
 {{</ labelled-highlight >}}
 
 ### Java + Lombok = Kotlin
-We use lombok in our project. What are the equivalents in Kotlin? What we are not loosing?
+We use lombok in our project. 
+
+What are the equivalents in Kotlin? What we are not loosing?
 Is there something that Kotlin does not provide us without of the box?
 {{< style "td,th,thead,table { border: none;  background-color: transparent; text-align: center; } "  >}}
 |     |     |
@@ -552,50 +555,62 @@ There is tool provided by Intellij, called delombock.
 ## Caveats for Java Developers
 {{< labelled-highlight lang="kotlin" filename="ConferenceCall.kt" >}}
 class ConferenceCall {
-val id: Int = Random.nextInt(0, 100)
+    val id: Int = Random.nextInt(0, 100)
 }
 {{</ labelled-highlight >}}
 {{< labelled-highlight lang="kotlin" filename="ConferenceFactoryTest.kt" >}}
 fun getConference() {
-val conferenceCall = ConferenceCall()
-for (i in 1..10) {
-println("Conference Call ID: ${conferenceCall.id}")
-}
+    val conferenceCall = ConferenceCall()
+    for (i in 1..10) {
+        println("Conference Call ID: ${conferenceCall.id}")
+    }
 }
 {{</ labelled-highlight >}}
+{{< style "img { display:block; width: 20%; margin-top: 1em;}" >}}
+![Conference Call ID Static](./conference-call-id-static.png)
+{{< /style >}}
 {{< labelled-highlight lang="kotlin" filename="ConferenceCall.kt" >}}
 class ConferenceCall {
-val id: Int
-get() {
-return Random.nextInt(0, 100)
-}
+    val id: Int
+    get() {
+        return Random.nextInt(0, 100)
+    }
 }
 {{</ labelled-highlight >}}
 {{< labelled-highlight lang="kotlin" filename="ConferenceFactoryTest.kt" >}}
 fun getConference() {
-val conferenceCall = ConferenceCall()
-for (i in 1..10) {
-println("Conference Call ID: ${conferenceCall.id}")
-}
+    val conferenceCall = ConferenceCall()
+    for (i in 1..10) {
+        println("Conference Call ID: ${conferenceCall.id}")
+    }
 }
 {{</ labelled-highlight >}}
-Learn tools you use very good. As experience Java developer could think Kotlin is just Java with syntax sugar,
+{{< style "img { display:block; width: 20%; margin-top: 1em;}" >}}
+![Conference Call ID Random](./conference-call-id-random.png)
+{{< /style >}}
+
+
+Learn tools, you use, very good. As an experience Java developer could think Kotlin is just Java with syntax sugar,
 sometimes they could be wrong. Kotlin is very flexible language and in some cases you can shoot yourself in the foot.
 As the same simple getter written in 2 different ways will also behave differently.
 
 ## Human Factors: Rejection
 Among the technical difficulties also there could be human factors. When debating whether to use Kotlin or Java for 
-development you should be aware that there's a third option: use both. And you can explain it to the colleagues and 
+development you should be aware that there's a third option: use both. 
+
+And you can explain it to the colleagues and 
 do not force them to use Kotlin, but simply let them stay with Java. It is possible to have Kotlin and Java classes 
 side by side within the same project and everything will still compile.
 
 ## Human Factors: Approaching
-How would you convince people? 
+**How would you convince people?** 
 
 First avoid Kotlin is cool argument, instead focus on the language features that promote maintainability and safety, 
 also remind people that it can be adopted incrementally. And it is a gradual evolution instead of revolution.
 
 ## Overall Code Base
+Now, a bit of statistic in out code base.
+
 {{< echarts height="45rem">}}
 {
 "title": {
