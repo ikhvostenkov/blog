@@ -2,6 +2,7 @@
 title: "About Me"
 date: 2021-10-24
 draft: false
+noComment: true
 ---
 {{< style "img { float: right; height: 20.25rem; margin: 10px; width: 30%; }" >}}
 ![Badge](/images/about/about-me.jpeg)
