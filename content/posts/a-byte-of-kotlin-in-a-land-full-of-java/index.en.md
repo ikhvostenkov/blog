@@ -7,7 +7,7 @@ draft: false
 I came to the world of programming through a Java path. And during my entire career I was programming 
 mostly in Java. When Kotlin became more and more popular in the programming world I wanted to answer 
 the question is it worth to use Kotlin in Java project or not?
-And it turned out, as always in an engineering, that an answer is it depends.
+And it turned out, as always in an engineering, that an answer is - **it depends**.
 This post is the way of a company I was working for and our experience.
 So let's have a journey from an island of Java to an island of Kotlin together.
 
@@ -17,11 +17,11 @@ So let's have a journey from an island of Java to an island of Kotlin together.
 My first acquaintance with Kotlin was when it has such a weird logo.
 
 Back then I wrote nothing more than "Hello, World!" project in Kotlin and only followed Kotlin
-community to be informed about new features and changes. But ~7 years ago I tried first time
-Kotlin in enterprise project for test automation API. Project was small and went for a while.
+community to be informed about new features and changes. But ~7 years ago I tried a first time
+Kotlin in an enterprise project for test automation API. The project was small and went for a while.
 
-Only in 2017 after some iterations of rejection and acceptance among other engineers we introduced
-Kotlin full time in our Java components in production running project. This was not a huge project:
+Only in 2017 after some iterations of a rejection and an acceptance among other engineers we introduced
+Kotlin full time in our Java components in a production running project. This was not a huge project:
 500K LOC, but was quite a while in production: for 12 years.
 {{< /style >}}
 
@@ -46,7 +46,7 @@ Kotlin was designed with keeping in mind all drawbacks of Java, but being 100% i
 {{< /style >}}
 
 ## What ∆ do we expect?
-Why we decided to introduce kotlin?
+Why did we decide to introduce kotlin?
 
 In our project we had:
 - A lot of Java code which was written starting from Java 1.4
@@ -89,7 +89,7 @@ be started with discussing all the caveats with the team.
 {{< /style >}}
 
 ### Coding conventions
-There is for quite a long time like from 2018 so-called coding Kotlin conventions, but if you
+There is for quite a long time like from 2018 so-called Kotlin coding conventions, but if you
 started before it or before Kotlin version 1.3, then you do not have all it in your project.
 But fortunately you have a special flag you can enable in maven or gradle which helps to
 synchronise your team.
@@ -111,21 +111,21 @@ kotlin.code.style=official
 
 [DETEKT](https://github.com/detekt/detekt)
 
-Who fails the build if the check fails?
+Do you also fail builds if a check fails?
 
 ## Mixing Kotlin and JAVA
-As Kotlin compiles to Java byte code you can have both Java and Kotlin code in one project, and you
+As Kotlin compiles to a Java byte code you can have both Java and Kotlin code in one project, and you
 can gradually add Kotlin to your existing project. Although blending Java and Kotlin works great, you
-can't write idiomatic Java nor Kotlin code, when blending. So the goal should be to move completely to
+can't write neither idiomatic Java nor Kotlin code, when blending. So the goal should be to move completely to
 Kotlin.
 {{< style "img { display:block; margin: auto; }" >}}
 ![Kotlin Build Process](./kotlin-build-process.svg)
 {{< /style >}}
 
 ## Strategies for adoption
-We can live with both languages in production more or less good, but this leads us to other question how to adopt Kotlin
-on practice? On the right picture you can see module with 2 source folders Java and Kotlin respectively usually
-```kotlinc``` invoked first to compile Kotlin files, then javac to compile Java on demand if there are dependency from
+We can live with both languages in production more or less good, but this leads us to another question - how to adopt Kotlin
+in practice? On the right picture you can see module with 2 source folders Java and Kotlin respectively - usually
+```kotlinc``` invoked first to compile Kotlin files, then javac to compile Java on demand if there are dependencies from
 Kotlin to JAVA.
 {{< style "td,th,thead,table { border: none;  background-color: transparent; text-align: left; } img { margin: 0.5em; } "  >}}
 | ![Dependency Map](./dependency-map.png) | ![JAVA Kotlin Tree](./java-kotlin-tree.png) |
@@ -137,10 +137,10 @@ Kotlin to JAVA.
 
 ## Conversion strategies
 The next question is how to convert your code systematically:
-- One more systematic way is to go random and wild, and do it along the task it hands. From the technical point of view
-  this is the worst approach, but it is the best following the business value.
+- One more systematic way is to go random and wild, and do it along a task at hands. From the technical point of view
+  this is the worst approach, but it is the best following a business value.
 
-Here you can see to incremental systematic approaches:
+Here you can see two incremental systematic approaches:
 - Inside-out, you take your dependency graph and first convert your innermost modules going outside.
   {{< style "img { display:block; margin: auto; }" >}}
   ![Dependency Map Inside-out](./dependency-map-inside-out.png)
@@ -152,7 +152,9 @@ Here you can see to incremental systematic approaches:
   {{< /style >}}
 
 ## JAVA to Kotlin converter
-Magic keys combination CMD + Option + Shift + K. Works only in one direction. Your Java class will become Kotlin class,
+Magic keys combination ```CMD + Option + Shift + K```. 
+
+Works only in one direction. Your Java class will become Kotlin class,
 but most of the case you require some revision and rework. What is the difference of new Kotlin converting. JetBrains
 advertise improved nullability conversion.
 {{< style "img { display:block; margin: auto; }" >}}
@@ -163,7 +165,7 @@ Converter is software. It can have bugs. Be aware.
 
 ### Converting: from JAVA
 You can automatically convert JAVA code to Kotlin code. But does the automatic JAVA to Kotlin converter always produces
-the idiomatic Kotlin code? Actually not. Kotlin converter does not produce the best results:
+an idiomatic Kotlin code? Actually not. Kotlin converter does not produce the best results:
 {{< labelled-highlight lang="java" filename="Participant.java" >}}
 public class Participant {
 
@@ -225,6 +227,7 @@ class Example {
 
 ### Converting: to Kotlin
 But if you've written your Java code so that it can be easily interpreted, the converted Kotlin code becomes better.
+
 Refactor your Java code -> convert to Kotlin using automatic converter, then simplify. We know the strategy, we have
 the tool, but where to start? First we proofed that our project works with Kotlin and our team understands how to mix
 it. We started to refactor some old Java code to Kotlin, mainly tests, which typically means calling from Java code into
@@ -290,8 +293,8 @@ class Example {
 
 ## Testing in Kotlin
 ### Naming
-Some Java frameworks like Spring are known with its class and methods names. Something like
-AbstractPostProcessorFactoryBean and this is not the longest name, but Kotlin could do better.
+Some Java frameworks like Spring are known with its class and method names. Something like
+```AbstractPostProcessorFactoryBean``` and this is not the longest name, but Kotlin could do better.
 You can write more readable names with spaces. However, dotes and carriage returns are not allowed.
 {{< labelled-highlight lang="kotlin" filename="Test.kt" >}}
 @Test
@@ -302,9 +305,13 @@ assertThat("String", instanceOf(String::class.java))
 
 ### Kotlin + JUnit
 Probably the most popular Java framework for unit testing is JUnit. And it works out of the box with some assumptions.
+
+
 You should know that ```@BeforeAll``` and ```@AfterAll``` should be defined in the companion object.
-Companion is such small singleton inside our class.
-And everything what is inside this singleton is static. There are no static fields in Kotlin.
+Companion is such a small singleton inside our class.
+And everything what is inside this singleton is static. 
+
+There are no static fields in Kotlin.
 In Parameterized tests ```ClassRule```, ```MethodRule``` and Parameter should be defined as ```@JvmFields```.
 There should be no getters and setters generated for them, only Java field. We can use ```@JvmStatic``` so that our
 ```@BeforeAll``` and ```@AfterAll``` will be generated not inside companion, but inside test class.
@@ -359,7 +366,7 @@ inline fun &ltreified T> kotlinAny(t: Class&ltT>): T = Mockito.any&ltT>(t)
 {{</ labelled-highlight >}}
 
 ### The Chad Mockito
-But Mockito could be beautiful and idiomatic. MockK library allows us to solve all the problems in a one shot.
+But Mockito could be beautiful and idiomatic. [MockK](Khttps://mockk.io/) library allows us to solve all the problems in a one shot.
 {{< labelled-highlight lang="kotlin" filename="MockK.kt" >}}
 val car = mockk&ltCar>()
 
@@ -375,7 +382,7 @@ confirmVerified(car)
 ## Problem of the no-args constructors in Java
 If you are using the Java Persistence API (JPA) you will have problems there.
 You would probably want to use Data classes for your entities in Kotlin.
-And this is logical desire, the have lot of perks, like equals and hashcode out of the box, Kotlin ```copy()``` functionality.
+And this is logical desire, they have a lot of perks, like equals and hashcode out of the box, Kotlin ```copy()``` functionality.
 
 Data classes have no no-arg constructor, but you need it in JPA. This is must have requirement in JPA.
 As solution - do not use data classes, but then you loose all perks.
@@ -466,7 +473,7 @@ String getName();
 String getLastName();
 }
 {{</ labelled-highlight >}}
-What is the problem here?
+What is a problem here?
 
 There are no getters and setters in Kotlin. You can not write something like ```override get() =...```.
 You should create private properties which obviously do not have generated getters and setters.
