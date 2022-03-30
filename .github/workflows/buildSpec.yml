@@ -11,5 +11,6 @@ jobs:
       - name: Deploy content to the personal blog
         run: |
           curl -X POST https://api.github.com/repos/ikhvostenkov/blog-platform/dispatches \
-          -u ${{ secrets.GITHUB_TOKEN }} \
+          -H 'Accept: application/vnd.github.v3+json' \
+          -u ${{ secrets.ACCESS_TOKEN }} \
           --data '{"event_type": "content-deploy", "client_payload": { "repository": "'"$GITHUB_REPOSITORY"'" }}'
