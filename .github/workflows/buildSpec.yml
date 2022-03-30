@@ -12,5 +12,5 @@ jobs:
         run: |
           curl -X POST https://api.github.com/repos/ikhvostenkov/blog-platform/dispatches \
           -H 'Accept: application/vnd.github.v3+json' \
-          -u ${{ secrets.ACCESS_TOKEN }} \
+          -u ${{ secrets.GITHUB_TOKEN }} \
           --data '{"event_type": "content-deploy", "client_payload": { "repository": "'"$GITHUB_REPOSITORY"'" }}'
