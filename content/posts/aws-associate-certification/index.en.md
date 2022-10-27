@@ -87,9 +87,33 @@ The most general exam to take. A few tips:
   than the actual exam. Just be sure to read all the explanations, especially for the questions you got wrong or guessed.
   The explanations are VERY thorough and backed with a lot of AWS material. These tests are more or less a course on
   their own!
+- 
 - [YouTube course from freeCodeCamp.org](https://www.youtube.com/watch?v=Ia-UEYYR44s&ab_channel=freeCodeCamp.org)
   Very concise and informative course. It is only 10 hours long in comparison with 40 hours of course from Cloud Guru.
   Respect to the course creators, I can not imagine how much time they spent to make it and this course is absolutely free.
 
+## AWS Certified Developer - Associate (DVA)
+Focal points of the exam:
 
+- Everything in the Code* suite, especially: CodeBuild, CodePipeline, CodeDeploy, CodeCommit
+- X-Ray
+- DynamoDB
+- Elastic Beanstalk (though not extremely deep)
 
+If you have previous experience in developing services with AWS and you used CDK, various AWS SDKs and have completed
+AWS Solutions Architect Associate exam, this would be not a big challenge for you to ace AWS Certified Developer exam.
+Furthermore, I recommend to do AWS Solutions Architect Associate and AWS Certified Developer exams together if you have 
+plan to get both certificates as there are a bunch of overlapping topics and this would be easy to learn it in parallel.
+
+### Studying Resources:
+
+- [YouTube course from freeCodeCamp.org](https://www.youtube.com/watch?v=RrKRN9zRBWs&t=19333s&ab_channel=freeCodeCamp.org)
+  Very concise and informative course. Highly recommended.
+
+- [Udemy Ultimate AWS Certified Developer Associate](https://www.udemy.com/course/aws-certified-developer-associate-dva-c01/)
+  I did not take this course.
+  But Stephane Maarek always has great content and offers great courses. So not a doubt in my mind that this would be 
+  high quality. Also offers 1 practice exam.
+
+- [Tutorials Dojo AWS Certified Solutions Architect Associate Practice Exams](https://portal.tutorialsdojo.com/courses/aws-certified-solutions-architect-associate-practice-exams/)
+  Jon Bonso's exams are always highly recommended.
