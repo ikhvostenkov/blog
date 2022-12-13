@@ -13,5 +13,5 @@ jobs:
           curl -X POST https://api.github.com/repos/ikhvostenkov/blog-platform/dispatches \
           -H "Accept: application/vnd.github+json" \
           -H "X-GitHub-Api-Version: 2022-11-28" \
-          -H "Authorization: Bearer ${{ secrets.ACCESS_TOKEN }}"\
+          -u ${{ secrets.ACCESS_TOKEN }} \
           -d '{"event_type": "content-deploy", "client_payload": { "repository": "'"$GITHUB_REPOSITORY"'" }}'
