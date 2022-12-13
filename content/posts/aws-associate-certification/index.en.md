@@ -1,7 +1,7 @@
 ---
 title: "My AWS Certification Journey"
-date: 2021-12-02
-draft: true
+date: 2022-12-12
+draft: false
 tags: ["AWS", "AWS Certification", "Courses", "learning"]
 ---
 Some may say certificates are not important. You just get some paper you can proudly hang on the wall or put badge in 
