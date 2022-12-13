@@ -2,6 +2,7 @@
 title: "A Byte of Kotlin in a Land Full of Java"
 date: 2020-10-25
 draft: false
+tags: ["Java", "Kotlin"]
 ---
 ## Intro
 I came to the world of programming through a Java path. And during my entire career I was programming 
