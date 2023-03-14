@@ -51,11 +51,11 @@ is this a smart bulb and if this is a smart bulb, which command classes are supp
 ## Security and Authentication
 
 {{< columns >}}
-{{< style "img { display:block; margin: auto; width: 55%; margin-top: 2em;}" >}}
+{{< style "img { display:block; margin: auto; width: 75%; margin-top: 2em;}" >}}
 ![Secure Inclusion](./secure-inclusion.png)
 {{< /style >}}
 <--->
-{{< style "text-align:center; margin-top: 5em;" >}}
+{{< style "text-align:center; " >}}
 Z-Wave provides a security layer. Original “S0” security command class and newly defined “S2” security command class.
 
 
@@ -86,7 +86,7 @@ EC works on the principal of a Public and a Private Key pair
 A major risk when including Z-Wave node and exchanging network keys is to include an unintended node and thus handing out the network keys to foreign and possibly malicious nodes. In oder to prevent this Z-Wave relies on authentication. Authentication works by stripping out part of the public key exchanged over the air and replacing it with zeros. The stripped out part is exchanged out of band either by entering it manually on the controller or by scanning QR code containing the stripped out part, also called DSK.
 
 {{< columns >}}
-{{< style "img { display:block; margin: auto; width: 55%; margin-top: 2em;}" >}}
+{{< style "img { display:block; margin: auto; width: 100%; margin-top: 2em;}" >}}
 ![Inclusion Flow Diagram](./inclusion-flow-diagram.png)
 {{< /style >}}
 <--->
@@ -134,7 +134,7 @@ New gateway - Provisioning list updated through backend when gateway is powered 
 SmartStart Gateway already installed - Easy add new devices by scanning QR code with smartphone - gets added to provisioning list through cloud/remote backend
 
 {{< columns >}}
-{{< style "img { width: 105%; }" >}}
+{{< style "img { width: 100%; }" >}}
 ![Inclusion NHID Generation](./inclusion-request-nhid-generation.jpg)
 {{< /style >}}
 <--->
