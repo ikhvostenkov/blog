@@ -51,11 +51,11 @@ is this a smart bulb and if this is a smart bulb, which command classes are supp
 ## Security and Authentication
 
 {{< columns >}}
-{{< style "img { display:block; margin: auto; width: 75%; margin-top: 2em;}" >}}
+{{< style "img { display:block; margin: auto; width: 77%; margin-top: 2em;}" >}}
 ![Secure Inclusion](./secure-inclusion.png)
 {{< /style >}}
 <--->
-{{< style "text-align:center; " >}}
+{{< style "margin-top: 4em; " >}}
 Z-Wave provides a security layer. Original “S0” security command class and newly defined “S2” security command class.
 
 
@@ -90,7 +90,7 @@ A major risk when including Z-Wave node and exchanging network keys is to includ
 ![Inclusion Flow Diagram](./inclusion-flow-diagram.png)
 {{< /style >}}
 <--->
-{{< style "text-align:center;" >}}
+{{< style "margin-top: 3em; " >}}
 Step 1: Exchange PUBLIC KEY between Devices
 
 * Both nodes create PUBLIC KEY using EC and send to each other
@@ -134,11 +134,11 @@ New gateway - Provisioning list updated through backend when gateway is powered 
 SmartStart Gateway already installed - Easy add new devices by scanning QR code with smartphone - gets added to provisioning list through cloud/remote backend
 
 {{< columns >}}
-{{< style "img { width: 100%; }" >}}
+{{< style "img { width: 90%; }" >}}
 ![Inclusion NHID Generation](./inclusion-request-nhid-generation.jpg)
 {{< /style >}}
 <--->
-{{< style "img { width: 100%; }" >}}
+{{< style "img { width: 110%; }" >}}
 ![Smart Start Process](./smart-start-process.jpg)
 {{< /style >}}
 {{< /columns >}}
