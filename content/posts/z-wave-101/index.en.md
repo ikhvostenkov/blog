@@ -143,4 +143,5 @@ SmartStart Gateway already installed - Easy add new devices by scanning QR code 
 {{< /style >}}
 {{< /columns >}}
 
+
 SmartStart inclusion uses two inclusion requests. This allows battery devices to sleep while the gateway matches the request against the provisioning list.
