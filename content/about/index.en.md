@@ -30,7 +30,7 @@ I’ve got one simple goal to improve my engineering skills, and I invite you to
 {{< solid-separator >}}
 
 {{< style "font-size: 1.3em; line-height: 1.3; word-spacing: 1.3px;" >}}
-If you’d like to get in touch with me, you can send an email to:
+If you’d like to get in touch with me, you can email:
 
 <ikhvostenkov@gmail.com>
 {{< /style >}}
