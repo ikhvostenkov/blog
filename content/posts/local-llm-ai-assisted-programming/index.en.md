@@ -111,6 +111,7 @@ you can redirect their power to use your own private, local model.
 As someone with extensive experience using JetBrains' development environments, I'll primarily discuss JetBrains IDE
 plugins. It's worth noting that comparable plugin functionality exists for many other integrated development
 environments as well.
+          {{< style "img { float: right; margin: 0.5em; width: 44%; }" >}}
 
 - **CodeGPT**: This plugin provides AI-powered code suggestions and a chat interface within your JetBrains IDE. It can
   connect to local LLMs.
@@ -118,22 +119,19 @@ environments as well.
     - Ensure Ollama is running with your desired model (e.g., `ollama run your-model`)
     - Configure CodeGPT in JetBrains:
         - Click *API Keys*
-          {{< style "img { float: right; margin: 0.5em; width: 44%; }" >}}
-          ![code-gpt-1.png](./code-gpt-1.png)
-          {{< /style >}}
+      
+            ![code-gpt-1.png](./code-gpt-1.png)
+
         - Select your local model provider and a model and start using it
-          {{< style "img { float: right; margin: 0.5em; width: 44%; }" >}}
           ![code-gpt-2.png](./code-gpt-2.png)
-          {{< /style >}}
+      
 - **ProxyAI**: An open-source plugin designed to connect JetBrains IDEs with locally running LLMs, including those
   managed
   by Ollama.
     - Install ProxyAI from the JetBrains Marketplace
     - Ensure Ollama is running with your desired model (e.g., `ollama run your-model`)
     - In your JetBrains IDE, go to _File > Settings/Preferences > Tools > ProxyAI > Providers > Ollama (Local)_
-      {{< style "img { float: right; margin: 0.5em; width: 44%; }" >}}
       ![proxy-ai-1.png](./proxy-ai-1.png)
-      {{< /style >}}
     - Click "Refresh Models" to sync with your running Ollama instance.
     - Optionally, choose an appropriate Fill-In-the-Middle (FIM) template if your model supports it for better code
       completions.
@@ -144,16 +142,14 @@ environments as well.
     - Ensure Ollama or LM Studio is running with your desired model.
     - In your JetBrains IDE, click the JetBrains AI widget (often in the toolbar) or go to _Settings/Preferences >
       Tools > AI Assistant_
-      {{< style "img { float: right; margin: 0.5em; width: 44%; }" >}}
       ![ai-assistant-1.png](./ai-assistant-1.png)
-      {{< /style >}}
     - In the "Third-party AI providers" section, select your LLM provider (Ollama or LM Studio)
     - Specify your local host URL (e.g., http://localhost:11434 for Ollama, or the specific URL and port for LM Studio)
       and click "Test Connection"
     - Once connected, select the desired model
-      {{< style "img { float: right; margin: 0.5em; width: 44%; }" >}}
       ![ai-assistant-2.png](./ai-assistant-2.png)
-      {{< /style >}}
+  
+  {{< /style >}}
 
 This direct IDE integration means you get AI assistance deeply embedded in your coding workflow, enhancing productivity
 while maintaining complete data privacy.
