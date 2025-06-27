@@ -157,7 +157,7 @@ environments as well.
     - Once connected, select the desired model
 
 
-{{< style "img { float: center; margin: 0.5em; width: 35%; }" >}}
+{{< style "img { float: right; margin: 0.5em; width: 50%; }" >}}
   ![ai-assistant-2.png](./ai-assistant-2.png)
 {{< /style >}}
   
