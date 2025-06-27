@@ -118,12 +118,14 @@ environments as well.
     - Ensure Ollama is running with your desired model (e.g., `ollama run your-model`)
     - Configure CodeGPT in JetBrains:
         - Click *API Keys*
-{{< style "img { float: right; margin: 0.5em; width: 44%; }" >}}
+
+{{< style "img { float: center; margin: 0.5em; width: 50%; }" >}}
   ![code-gpt-1.png](./code-gpt-1.png)
 {{< /style >}}
 
-        - Select your local model provider and a model and start using it
-{{< style "img { float: right; margin: 0.5em; width: 44%; }" >}} 
+   - Select your local model provider and a model and start using it
+
+{{< style "img { float: center; margin: 0.5em; width: 50%; }" >}} 
   ![code-gpt-2.png](./code-gpt-2.png)
 {{< /style >}}
       
@@ -153,10 +155,13 @@ environments as well.
     - Specify your local host URL (e.g., http://localhost:11434 for Ollama, or the specific URL and port for LM Studio)
       and click "Test Connection"
     - Once connected, select the desired model
-{{< style "img { float: right; margin: 0.5em; width: 30%; }" >}}
+
+
+{{< style "img { float: center; margin: 0.5em; width: 35%; }" >}}
   ![ai-assistant-2.png](./ai-assistant-2.png)
 {{< /style >}}
   
+
 
 This direct IDE integration means you get AI assistance deeply embedded in your coding workflow, enhancing productivity
 while maintaining complete data privacy.
